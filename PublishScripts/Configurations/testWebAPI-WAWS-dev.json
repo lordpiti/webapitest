@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "testWebAPI9847",
+            "location": "West Europe"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "testWebAPI9847_db",
+                "serverName": "qdijnzq4jx",
+                "user": "lordpiti",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "West Europe"
+            }
+        ]
+    }
+}
