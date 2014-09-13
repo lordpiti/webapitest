@@ -43,6 +43,13 @@ namespace testWebAPI.Controllers
             return contacts;
         }
 
+        public IQueryable<Contact> GetByManagerId(int managerId)
+        {
+            var contacts = db.Contacts.Where(x => x.ManagerId == managerId);
+
+            return contacts;
+        }
+
         // PUT: api/Contacts/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutContact(int id, Contact contact)

@@ -12,7 +12,7 @@ namespace testWebAPI.Controllers
 {
     public class HomeController : Controller
     {
-        private testWebAPIContext db = new testWebAPIContext();  
+        private testWebAPIContext db = new testWebAPIContext();
 
         // GET: Home
         public ActionResult Index()

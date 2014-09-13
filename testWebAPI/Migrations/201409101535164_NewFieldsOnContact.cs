@@ -7,9 +7,24 @@ namespace testWebAPI.Migrations
     {
         public override void Up()
         {
-            DropPrimaryKey("dbo.Contacts");
-            DropColumn("dbo.Contacts", "ContactId");
-            AddColumn("dbo.Contacts", "Id", c => c.Int(nullable: false, identity: true));
+            DropTable("dbo.Contacts");
+
+            CreateTable(
+                "dbo.Contacts",
+                c => new
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Address = c.String(),
+                    City = c.String(),
+                    State = c.String(),
+                    Zip = c.String(),
+                    Email = c.String(),
+                    Twitter = c.String(),
+                    Self = c.String(),
+                })
+                .PrimaryKey(t => t.Id);
+
             AddColumn("dbo.Contacts", "FirstName", c => c.String());
             AddColumn("dbo.Contacts", "LastName", c => c.String());
             AddColumn("dbo.Contacts", "ManagerId", c => c.Int());
@@ -22,27 +37,28 @@ namespace testWebAPI.Migrations
             AddColumn("dbo.Contacts", "Pic", c => c.String());
             AddColumn("dbo.Contacts", "TwitterId", c => c.String());
             AddColumn("dbo.Contacts", "Blog", c => c.String());
-            AddPrimaryKey("dbo.Contacts", "Id");
+
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Contacts", "ContactId", c => c.Int(nullable: false, identity: true));
-            DropPrimaryKey("dbo.Contacts");
-            DropColumn("dbo.Contacts", "Blog");
-            DropColumn("dbo.Contacts", "TwitterId");
-            DropColumn("dbo.Contacts", "Pic");
-            DropColumn("dbo.Contacts", "OfficePhone");
-            DropColumn("dbo.Contacts", "CellPhone");
-            DropColumn("dbo.Contacts", "Department");
-            DropColumn("dbo.Contacts", "Title");
-            DropColumn("dbo.Contacts", "Reports");
-            DropColumn("dbo.Contacts", "ManagerName");
-            DropColumn("dbo.Contacts", "ManagerId");
-            DropColumn("dbo.Contacts", "LastName");
-            DropColumn("dbo.Contacts", "FirstName");
-            DropColumn("dbo.Contacts", "Id");
-            AddPrimaryKey("dbo.Contacts", "ContactId");
+            DropTable("dbo.Contacts");
+
+            CreateTable(
+                "dbo.Contacts",
+                c => new
+                {
+                    ContactId = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Address = c.String(),
+                    City = c.String(),
+                    State = c.String(),
+                    Zip = c.String(),
+                    Email = c.String(),
+                    Twitter = c.String(),
+                    Self = c.String(),
+                })
+                .PrimaryKey(t => t.ContactId);
         }
     }
 }
