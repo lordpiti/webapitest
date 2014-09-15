@@ -54,7 +54,7 @@ namespace testWebAPI.Migrations
                    {
                        Name = "Albert Perez",
                        Address = "1234 Main St",
-                       City = "Badalona",
+                       City = "Barcelona",
                        State = "Catalunya",
                        Zip = "10999",
                        Email = "debra@example.com",
@@ -117,6 +117,23 @@ namespace testWebAPI.Migrations
                         Title = "ESHHHHKIUSMI",
                         Reports = 0,
                         Blog = "http://marca.feedsportal.com/rss/futbol_equipos_real_madrid.xml"
+                    },
+                    new Contact
+                    {
+                        Name = "Pablo Camara",
+                        Address = "1234 Main St",
+                        City = "Jaen",
+                        State = "Jaen",
+                        Zip = "10999",
+                        Email = "debra@example.com",
+                        Twitter = "debra_example",
+                        Department = "Real Jaen",
+                        FirstName = "Pablo",
+                        LastName = "Camara",
+                        ManagerId = 1,
+                        Title = "Limpito",
+                        Reports = 0,
+                        Blog = "http://www.realjaen.com/club/noticias?format=feed&type=rss"
                     }
             );
         }
